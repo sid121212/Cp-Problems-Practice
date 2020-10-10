@@ -1,0 +1,12 @@
+alpha=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+for _ in range(int(input())):
+    n,a,b=map(int,input().split())
+    i=0
+    while i<n:
+        j=0
+        while i<n and j<b:
+            print(alpha[j],end="")
+            i+=1
+            j+=1
+    print()
+
