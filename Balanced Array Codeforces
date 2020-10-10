@@ -1,0 +1,15 @@
+for _ in range(int(input())):
+    n=int(input())
+    if n%4:
+        print("NO")
+    else:
+        print("YES")
+        summ=0
+        for i in range(n//2):
+            print(2*(i+1),end=" ")
+            summ+=2*(i+1)
+        ex=0
+        for j in range((n//2)-1):
+            print(2*(j+1)-1,end=" ")
+            ex+=2*j+1
+        print(summ-ex)
