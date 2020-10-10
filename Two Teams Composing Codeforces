@@ -1,0 +1,20 @@
+from collections import Counter
+for _ in range(int(input())):
+    n=int(input())
+    a=list(map(int,input().split()))
+    if n==1:
+        print(0)
+        continue
+    count=Counter(a)
+    keys=list(count.keys())
+    values=list(count.values())
+    l=len(keys)
+    if l==n:
+        print(1)
+        continue
+    maxx=-1
+    for i in values:
+        minn=max(min(l-1,i),min(l,i-1))
+        maxx=max(minn,maxx)
+    print(maxx)
+
