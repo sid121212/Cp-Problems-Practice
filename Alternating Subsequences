@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        long long n;
+        cin>>n;
+        long long sum=0;
+        long long now,in,z;
+        cin>>in;
+        now=in;
+        if (n==1){
+            cout<<now<<'\n';
+        }else{
+            for(int i=1;i<n;i++){
+                cin>>in;
+                z=now*in;
+                if (z>0){
+                    now=max(now,in);
+                }else{
+                    sum+=now;
+                    now=in;
+                }
+            }
+            sum+=now;
+            cout<<sum<<'\n';
+        }
+    }
+}
