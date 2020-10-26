@@ -1,0 +1,27 @@
+n=int(input())
+a=list(map(int,input().split()))
+
+a.sort()
+maxx=a[-1]
+ans=False
+for i in range(1,maxx+1):
+    g=-1
+    cnt=0
+    for j in a:
+        if g==-1:
+            cnt+=1
+            g=abs(i+j)
+            continue
+        if abs(i-j)==g or abs(i+j)==g or j==g:
+            cnt+=1
+    if cnt==n:
+        ans=True
+        maxx=i
+        break
+if a[0]==a[-1]:
+    ans=True
+    maxx=0
+if ans:
+    print(maxx)
+else:
+    print(-1)
