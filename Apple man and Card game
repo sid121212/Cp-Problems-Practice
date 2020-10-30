@@ -1,0 +1,17 @@
+from collections import Counter
+n,k=map(int,input().split())
+s=input()
+count=Counter(s)
+values=sorted(list(count.values()),reverse=True)
+cards=k
+summ=0
+i=0
+while cards>0:
+    if values[i]>=cards:
+        summ+=cards*cards
+        break
+    else:
+        summ+=values[i]*values[i]
+        cards-=values[i]
+        i+=1
+print(summ)
