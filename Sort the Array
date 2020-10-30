@@ -1,0 +1,22 @@
+n=int(input())
+s=list(map(int,input().split()))
+first=-1
+last=-1
+cnt=0
+for i in range(n-1):
+    if s[i]>s[i+1] and first==-1:
+        first=i
+    if first!=-1 and s[i+1]<=s[i]:
+        last=i+1
+    if last==-1 and first!=-1 and i==n-2:
+        last=n-1
+if first==-1 and s==sorted(s):
+    print("yes")
+    print(1,1)
+else:
+    newarr=s[0:first]+s[first:last+1][::-1]+s[last+1:n]
+    if newarr==sorted(s):
+        print("yes")
+        print(first+1,last+1)
+    else:
+        print("no")
