@@ -1,0 +1,13 @@
+for _ in range(int(input())):
+    n,k=map(int,input().split())
+    a=list(map(int,input().split()))
+    z=n*k-1
+    half=(n)//2
+    z-=half
+    cost=0
+    for _ in range(k):
+        cost+=a[z]
+        z-=half
+        z-=1
+    print(cost)
+
