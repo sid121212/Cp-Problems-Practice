@@ -1,0 +1,16 @@
+for _ in range(int(input())):
+    n,W=map(int,input().split())
+    w=list(map(int,input().split()))
+    arr=[[w[i],i+1] for i in range(n)]
+    arr.sort(key=lambda x:x[0],reverse=True)
+    q=0
+    ll=[]
+    for i in range(n):
+        if arr[i][0]+q<=W:
+            q+=arr[i][0]
+            ll.append(arr[i][1])
+    if q<(W+1)//2:
+        print(-1)
+    else:
+        print(len(ll))
+        print(*ll)
