@@ -1,0 +1,10 @@
+for _ in range(int(input())):
+    n,c0,c1,h=map(int,input().split())
+    s=input()
+    cost=0
+    for i in s:
+        if i=='0':
+            cost+=min(c0,h+c1)
+        elif i=='1':
+            cost+=min(c1,c0+h)
+    print(cost)
