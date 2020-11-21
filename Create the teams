@@ -1,0 +1,15 @@
+from collections import Counter
+import math
+import bisect
+for _ in range(int(input())):
+    n,x=map(int,input().split())
+    a=list(map(int,input().split()))
+    for i in range(n):
+        a[i]=math.ceil(x/a[i])
+    count=Counter(a)
+    carry=0
+    cnt=0
+    for i in sorted(count.keys()):
+        cnt+=(count[i]+carry)//i
+        carry=(count[i]+carry)%i
+    print(cnt)
