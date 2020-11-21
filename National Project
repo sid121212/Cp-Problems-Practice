@@ -1,0 +1,9 @@
+import math
+for _ in range(int(input())):
+    n,g,b=map(int,input().split())
+    half=math.ceil(n/2)
+    if g>=half:
+        print(n)
+    else:
+        div=math.ceil(half/g)
+        print(max(n,half+(div-1)*b))
