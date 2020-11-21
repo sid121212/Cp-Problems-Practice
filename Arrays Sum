@@ -1,0 +1,15 @@
+from collections import Counter
+import math
+for _ in range(int(input())):
+    n,k=map(int,input().split())
+    a=list(map(int,input().split()))
+    count=Counter(a)
+    if len(count)==1:
+        print(1)
+    elif k==1 and len(count)>1:
+        print(-1)
+    elif k==len(count):
+        print(1)
+    else:
+        l=len(count)
+        print(max(1,math.ceil((l-1)/(k-1))))
