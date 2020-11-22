@@ -1,0 +1,15 @@
+import sys, string
+input = sys.stdin.readline
+from collections import Counter
+for _ in range(int(input())):
+    n, k = map(int, input().split())
+    a, b = input()[:-1], input()[:-1]
+    cnta = Counter(a)
+    cntb = Counter(b)
+    for i in string.ascii_lowercase:
+        if cnta[i] < cntb[i] or (cntb[i] - cnta[i]) % k:
+            print("No")
+            break
+        cnta[chr(ord(i) + 1)] += cnta[i] - cntb[i]
+    else:
+        print("Yes")
