@@ -1,0 +1,19 @@
+for _ in range(int(input())):
+    n,q=map(int,input().split())
+    s=input()
+    for _ in range(q):
+        l,r=map(int,input().split())
+        a=s[l-1:r]
+        first=a[0]
+        last=a[-1]
+        good=False
+        for i in range(l-1):
+            if s[i]==first:
+                good=True
+        for j in range(r,n):
+            if s[j]==last:
+                good=True
+        if good:
+            print("YES")
+        else:
+            print("NO")
