@@ -1,0 +1,15 @@
+arr=[[0],[1],[2],[3],[3,2,2],[5],[3,5],[7],[7,2,2,2],[7,3,3,2]]
+a=(int(input()))
+n=int(input())
+ll=[]
+while (n):
+    ll+=arr[n%10]
+    n//=10
+ll.sort(reverse=True)
+s=''
+for i in ll:
+    if i==1 or i==0:
+        continue
+    s+=str(i)
+print(s)    
+    
