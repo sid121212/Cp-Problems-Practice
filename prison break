@@ -1,0 +1,7 @@
+for _ in range(int(input())):
+    n,m,r,c=map(int,input().split())
+    one=abs(1-r)+abs(1-c)
+    two=abs(n-r)+abs(m-c)
+    three=abs(1-r)+abs(m-c)
+    four=abs(n-r)+abs(1-c)
+    print(max(one,two,three,four))
