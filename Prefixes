@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    int cnt=0;
+    string ans="";
+    for (int i=0;i<n-1;i+=2){
+        if (s[i]=='a' and s[i+1]=='b'){
+            ans+="ab";
+            continue;
+        }
+        
+        if (s[i]=='b' and s[i+1]=='a'){
+            ans+="ba";
+            continue;
+        }
+        ans+="ab";
+        cnt+=1;
+        
+        
+        
+    }
+    cout<<cnt<<'\n';
+    cout<<ans<<'\n';
+    return 0;
+}
