@@ -1,0 +1,11 @@
+from collections import *
+dic=Counter([])
+for _ in range(int(input())):
+    n=input()
+    if dic[n]:
+       dic[n]+=1
+       print(n+str(dic[n]-1))
+    else:
+        print("OK")
+        dic[n]+=1
+
