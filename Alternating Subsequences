@@ -24,6 +24,8 @@ int main(){
                 }
             }
             sum+=now;
+            int temp;
+            temp=0;
             cout<<sum<<'\n';
         }
     }
